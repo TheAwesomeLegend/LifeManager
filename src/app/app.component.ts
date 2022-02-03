@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'LifeManagerApp';
+  display = false;
+  filter = '';
+
+  onFilter(el: any) {}
 }

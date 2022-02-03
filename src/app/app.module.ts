@@ -1,26 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { ContactsComponent } from './contacts/contacts.component';
-import { ContactListComponent } from './contacts/contact-list/contact-list.component';
-import { ContactItemComponent } from './contacts/contact-list/contact-item/contact-item.component';
-import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
+import { SidebarModule } from 'primeng/sidebar';
+import { ToolbarModule } from 'primeng/toolbar';
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+
+const primeng = [
+  InputTextModule,
+  SidebarModule,
+  ToolbarModule
+]
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    ContactsComponent,
-    ContactListComponent,
-    ContactItemComponent,
-    ContactDetailComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    primeng,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

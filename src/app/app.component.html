@@ -1,8 +1,33 @@
-<app-header></app-header>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <h2>I'm Working</h2>
-        </div>
+<p-sidebar
+  [(visible)]="display"
+  [showCloseIcon]="false"
+  [style]="{ width: '16em' }"
+>
+<div class="sidenav"></div>
+</p-sidebar>
+<div class="container mb-5">
+  <p-toolbar [style]="{border: 'none'}">
+    <div class="p-toolbar-group-left">
+      <button class="btn btn-default" (click)="display=true">
+        <i class="fa fa-bars fa-fw fa-lg"></i>
+      </button>
+      <a style="cursor: pointer;">
+        <span style="font-family:'Courier New', Courier, monospace">Life Manager</span>
+      </a>
     </div>
+    <div class="p-toolbar-group-right">
+      <div class="p-inputgroup">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input
+            type="text"
+            pInputText
+            placeholder="Search App"
+            (keyup)="onFilter($event)"
+            [(ngModel)]="filter"
+          />
+        </span>
+      </div>
+    </div>
+  </p-toolbar>
 </div>
