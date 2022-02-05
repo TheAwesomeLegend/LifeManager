@@ -1,27 +1,41 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppComponent } from './app.component';
-import { SidebarModule } from 'primeng/sidebar';
-import { ToolbarModule } from 'primeng/toolbar';
 import { InputTextModule } from 'primeng/inputtext';
-import { FormsModule } from '@angular/forms';
+import { RippleModule } from 'primeng/ripple';
+import { SidebarModule } from 'primeng/sidebar';
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { ContactDetailComponent } from './Social/RelationshipManager/contacts/contact-detail/contact-detail.component';
+import { ContactItemComponent } from './Social/RelationshipManager/contacts/contact-list/contact-item/contact-item.component';
+import { ContactListComponent } from './Social/RelationshipManager/contacts/contact-list/contact-list.component';
+import { ContactsComponent } from './Social/RelationshipManager/contacts/contacts.component';
 
 const primeng = [
   InputTextModule,
+  RippleModule,
   SidebarModule,
+  ToastModule,
   ToolbarModule
-]
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactsComponent,
+    ContactDetailComponent,
+    ContactListComponent,
+    ContactItemComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     primeng,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
