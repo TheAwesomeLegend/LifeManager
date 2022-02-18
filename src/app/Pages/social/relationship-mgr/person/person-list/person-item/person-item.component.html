@@ -1,16 +1,41 @@
-<p-card>
-  <ng-template pTemplate="header">
-    <div class="header">
-      <div>
-        <p-avatar
-          image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHczbieafRCGIyzAmY5lPATSzWRM5FrMb76g&usqp=CAU"
-          size="xlarge"
-          shape="circle"
-        ></p-avatar>
-        <span>FirstName Surname</span>
+<a style="cursor: pointer" (click)="onPersonSelected()">
+  <p-card [style]="{ width: '300px' }" styleClass="p-card-shadow">
+    <ng-template pTemplate="header">
+      <img
+        [src]="person.profilePictureUrl"
+        alt="{{ person.firstName }} {{ person.lastName }}"
+      />
+    </ng-template>
+    <div class="container">
+      <div class="row">
+        <span style="font-weight: bold; font-size: large"
+          >{{ person.firstName }} {{ person.lastName }}</span
+        >
       </div>
+      <div class="row">{{ person.phoneNumber }}</div>
+      <div class="row">{{ person.emailAddress }}</div>
+      <div class="row mt-3">
+        <span style="font-weight: bold">Address:</span>
+      </div>
+      <div class="row">{{ person.AddressLine1 }}</div>
+      <div class="row">{{ person.AddressLine2 }}</div>
+      <div class="row">{{ person.AddressCity }}</div>
+      <div class="row">{{ person.AddressProvice }}</div>
+      <div class="row">{{ person.AddressPostalCode }}</div>
     </div>
-  </ng-template>
-  <p>CellPhone: 0673859688</p>
-  <p>Email: dean@awesomelegend.co.za</p>
-</p-card>
+    <ng-template pTemplate="footer">
+      <div class="container">
+        <div class="row">{{ person.relationship }}</div>
+        <div class="row my-2">
+          Relationship Rating:
+          <p-rating
+            [stars]="10"
+            [cancel]="false"
+            [readonly]="true"
+            [(ngModel)]="person.relationshipRating"
+          ></p-rating>
+        </div>
+      </div>
+    </ng-template>
+  </p-card>
+</a>

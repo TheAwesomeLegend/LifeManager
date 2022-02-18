@@ -1,5 +1,5 @@
 <div class="row my-5">
-  <div class="col-12">
-    <app-person-item></app-person-item>
-  </div>
+
+    <app-person-item *ngFor="let person of personArr" [person]="person" class="m-3"></app-person-item>
+
 </div>

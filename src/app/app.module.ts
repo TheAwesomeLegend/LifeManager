@@ -5,7 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageService } from 'primeng/api';
 import { AvatarModule } from 'primeng/avatar';
 import { CardModule } from 'primeng/card';
+import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
+import { RatingModule } from 'primeng/rating';
 import { RippleModule } from 'primeng/ripple';
 import { SidebarModule } from 'primeng/sidebar';
 import { ToastModule } from 'primeng/toast';
@@ -29,13 +31,15 @@ import { SocialComponent } from './Pages/social/social.component';
 import { SpiritualComponent } from './Pages/spiritual/spiritual.component';
 
 const primeng = [
+  AvatarModule,
+  CardModule,
   InputTextModule,
+  ImageModule,
+  RatingModule,
   RippleModule,
   SidebarModule,
   ToastModule,
   ToolbarModule,
-  CardModule,
-  AvatarModule,
 ];
 
 @NgModule({

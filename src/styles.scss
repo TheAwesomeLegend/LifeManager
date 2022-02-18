@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+body .p-inputtext.p-component {
+  width: 100%;
+}
+
+:root {
+  --color-white: #ffffff;
+  --color-nuetral-grey: #939598;
+}
+
+// PRIME NG OVERRIDES
+.p-toolbar {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.p-card .p-card-title {
+  margin-left: 14px;
+}
